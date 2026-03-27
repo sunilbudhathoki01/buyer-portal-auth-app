@@ -8,6 +8,7 @@ const app = express();
 
 //databaseconnection
 databaseConnection();
+app.use("/api/auth",)
 
 app.use(express.json());
 const port = process.env.PORT ?? 3000;
