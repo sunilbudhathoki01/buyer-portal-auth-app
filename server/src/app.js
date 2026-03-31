@@ -8,11 +8,17 @@ import favouriteRoute from "./routes/favouriteRoute.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 //databaseconnection
 databaseConnection();
 
+//cors setup
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
 // APIs
 app.use("/api/auth", authRoutes);
 app.use("/api/properties", propertyRoute);
