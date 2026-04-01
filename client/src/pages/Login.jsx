@@ -33,6 +33,7 @@ const Login = () => {
       }
 
       localStorage.setItem("token", token);
+      localStorage.setItem("role", res.data.data.role);
       navigate("/dashboard");
     } catch (error) {
       console.error("Login error", error);
